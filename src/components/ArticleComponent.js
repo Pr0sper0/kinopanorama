@@ -37,6 +37,8 @@ class ArticleComponent extends React.Component {
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             ></iframe>
+
+                            <b>Get new information soon</b>
                             <p>
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis
                                 dolores quaerat in non a optio autem molestiae, alias consectetur,

@@ -11,8 +11,7 @@ export default function Article(props) {
                 <h3>
                     <Link to={{ pathname: `/article/${props.id}`, state: { params: props } }}>{props.description}</Link>
                 </h3>
-                <b>Get new information soon</b>
-                {/* {props.content.toString().slice(0, 200) + "..."} */}
+                {props.content.toString().slice(0, 200) + "..."}
             </div>
         </article >
 
