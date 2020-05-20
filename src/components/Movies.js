@@ -8,6 +8,7 @@ export default function Movies() {
                 <div className="page-container">
                     <article className="card">
                         <h1 className="l-heading">Search Movies</h1>
+                        <b>This page is under construction</b>
                         <p>
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem
                             officia facere a rem ipsum iusto esse ratione nam, qui fugit.

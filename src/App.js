@@ -20,6 +20,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/movies" component={Movies} />
+          <Route exact path="/about" component={About} />
           <Route path="/article/:id" component={ArticleComponent} />
         </Switch>
       </React.Fragment>
