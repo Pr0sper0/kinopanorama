@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Strapi from 'strapi-sdk-javascript/build/main';
 
 
-const apiUrl = process.env.API_URL || 'http://localhost:1337';
+const apiUrl = process.env.API_URL || 'https://kinoserver.herokuapp.com';
 let strapi = "";
 
 
