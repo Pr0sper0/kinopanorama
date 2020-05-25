@@ -16,7 +16,8 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            articles: []
+            articles: [],
+            loading: true
         }
     }
 
@@ -41,8 +42,8 @@ class Home extends Component {
                   }`
                 }
             })
-            //console.log(response.data.articles);
-            this.setState({ articles: response.data.articles })
+            //console.log('data: ' + response.data.articles);
+            this.setState({ articles: response.data.articles, loading: false })
         } catch (err) {
             console.log('Cant get data' + err);
 
@@ -51,7 +52,7 @@ class Home extends Component {
     }
 
     render() {
-        console.log('length: ' + this.state.articles.length);
+        //console.log('length: ' + this.state.articles.length);
         return (
             <div>
                 {/*<!-- Showcase -->*/}
@@ -81,7 +82,7 @@ class Home extends Component {
                     <div className="container">
                         <h2>Editor Picks</h2>
                         <div className="articles-container">
-                            <ArticleList elements={this.state.articles} apiUrl={apiUrl} />
+                            <ArticleList loading={this.state.loading} elements={this.state.articles} apiUrl={apiUrl} />
                         </div>
                     </div>
                 </section>

@@ -28,7 +28,7 @@ class ArticleComponent extends React.Component {
                             <p>
                                 {content}
                             </p>
-                            <h2>Look this awesome video</h2>
+                            <h2>Watch this awesome video</h2>
                             <iframe
                                 width="100%"
                                 height="400"
