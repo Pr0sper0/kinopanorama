@@ -60,7 +60,7 @@ class Home extends Component {
                     <div className="container">
                         <div className="showcase-container">
                             <div className="showcase-content">
-                                <div className="category category-films">Ukrainian Cinema</div>
+                                <div className="category category-films">Ukrainian cinematography</div>
                                 <h1>Top Ukrainian Films</h1>
                                 <p>
                                     Over the past few years, Ukrainian cinema has been rising from the
