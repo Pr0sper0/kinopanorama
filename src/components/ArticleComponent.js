@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 
 class ArticleComponent extends React.Component {
 
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const { id, content, description, category, image, media_url } = this.props.location.state.params;
         console.log('params: ' + media_url);

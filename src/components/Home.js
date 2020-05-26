@@ -30,8 +30,12 @@ class Home extends Component {
                 } catch (err) {
                     console.log('Cant get data' + err);
                 }
-            }, 2000)
+            }, 1000)
         }
+
+    }
+
+    componentDidUpdate() {
 
     }
 
