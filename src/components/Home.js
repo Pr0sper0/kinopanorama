@@ -21,34 +21,53 @@ class Home extends Component {
         }
     }
 
-    async componentDidMount() {
-        try {
-            strapi = new Strapi(apiUrl);
-            const response = await strapi.request('POST', '/graphql', {
-                data: {
-                    query: `query {
-                    articles(limit: 10) {
-                     _id
-                     Description
-                    Category
-                    Content
-                    Image {
-                      _id
-                      url
-                      mime
-                    }
-                    media_url
-                    }
-                  }`
-                }
-            })
-            //console.log('data: ' + response.data.articles);
-            this.setState({ articles: response.data.articles, loading: false })
-        } catch (err) {
-            console.log('Cant get data' + err);
 
+    async componentDidMount() {
+        if (this.state.articles.length == 0) {
+            this.interval = await setInterval(async () => {
+                try {
+                    await this.strapiRequest();
+                } catch (err) {
+                    console.log('Cant get data' + err);
+                }
+            }, 2000)
         }
 
+    }
+
+    async strapiRequest() {
+        strapi = new Strapi(apiUrl);
+        const response = await strapi.request('POST', '/graphql', {
+            data: {
+                query: `query {
+        articles(limit: 10) {
+         _id
+         Description
+        Category
+        Content
+        Image {
+          _id
+          url
+          mime
+        }
+        media_url
+        }
+      }`
+            }
+        })
+        console.log(this.state.articles);
+        this.setState({
+            articles: response.data.articles, loading: false
+        })
+        this.articlesState();
+    }
+
+    articlesState() {
+        if (this.state.articles.length != 0) clearInterval(this.interval);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     render() {
