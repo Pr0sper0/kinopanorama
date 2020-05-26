@@ -21,23 +21,31 @@ class Home extends Component {
         }
     }
 
+    // We should not make additional request
+    // async componentDidMount() {
+    //     if (this.state.articles.length == 0) {
+    //         this.interval = await setInterval(async () => {
+    //             try {
+    //                 await this.strapiRequest();
+    //             } catch (err) {
+    //                 console.log('Cant get data' + err);
+    //             }
+    //         }, 2000)
+    //     }
+
+    // }
+
+
 
     async componentDidMount() {
-        if (this.state.articles.length == 0) {
-            this.interval = await setInterval(async () => {
-                try {
-                    await this.strapiRequest();
-                } catch (err) {
-                    console.log('Cant get data' + err);
-                }
-            }, 1000)
+
+        try {
+            await this.strapiRequest();
+        } catch (err) {
+            console.log('Cant get data' + err);
         }
-
     }
 
-    componentDidUpdate() {
-
-    }
 
     async strapiRequest() {
         strapi = new Strapi(apiUrl);
